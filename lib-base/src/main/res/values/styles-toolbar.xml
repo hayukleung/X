@@ -1,0 +1,22 @@
+<resources>
+
+  <style name="Toolbar" parent="Widget.AppCompat.Toolbar">
+    <item name="titleTextAppearance">@style/Toolbar.titleTextAppearance</item>
+    <item name="subtitleTextAppearance">
+      @style/TextAppearance.Widget.AppCompat.Toolbar.Subtitle
+    </item>
+    <item name="android:minHeight">?attr/actionBarSize</item>
+    <item name="titleMargins">4dp</item>
+    <item name="maxButtonHeight">56dp</item>
+    <item name="collapseIcon">?attr/homeAsUpIndicator</item>
+    <item name="collapseContentDescription">@string/abc_toolbar_collapse_description</item>
+    <item name="contentInsetStart">0dp</item>
+    <item name="android:background">@android:color/white</item>
+  </style>
+
+  <style name="Toolbar.titleTextAppearance" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+    <item name="android:textColor">@color/colorText</item>
+    <item name="android:textSize">18sp</item>
+  </style>
+
+</resources>

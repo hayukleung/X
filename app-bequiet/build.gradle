@@ -1,0 +1,69 @@
+apply plugin: 'com.android.application'
+// for greenDao
+apply plugin: 'org.greenrobot.greendao'
+
+android {
+  compileSdkVersion 25
+  buildToolsVersion "25.0.2"
+  defaultConfig {
+    applicationId "com.hayukleung.x.bequiet"
+    minSdkVersion 17
+    targetSdkVersion 25
+    versionCode 1
+    versionName "1.0"
+    // testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    multiDexEnabled true
+  }
+
+  signingConfigs {
+    x {
+      keyAlias "${KEY_ALIAS}"
+      keyPassword "${KEY_PASSWORD}"
+      storeFile file('./hayukleung.jks')
+      storePassword "${KEY_STORE_PASSWORD}"
+    }
+  }
+
+  buildTypes {
+    release {
+      minifyEnabled true
+      shrinkResources true
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+      signingConfig signingConfigs.x
+    }
+    debug {
+      minifyEnabled false
+      shrinkResources false
+    }
+  }
+  // configurations.all {
+  // resolutionStrategy.force 'com.google.code.findbugs:jsr305:3.0.1'
+  // }
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_7
+    targetCompatibility JavaVersion.VERSION_1_7
+  }
+
+  lintOptions {
+    abortOnError false
+  }
+}
+
+greendao {
+  schemaVersion 1
+  daoPackage 'com.hayukleung.x.bequiet.database'
+  targetGenDir 'src/main/java'
+}
+
+dependencies {
+  compile fileTree(include: ['*.jar'], dir: 'libs')
+
+  // dagger2
+  compile 'com.google.dagger:dagger:2.10'
+  annotationProcessor 'com.google.dagger:dagger-compiler:2.10'
+
+  // my own libraries
+  compile project(':lib-base')
+}

@@ -56,8 +56,10 @@ dependencies {
   compile fileTree(include: ['*.jar'], dir: 'libs')
 
   // dagger2
-  compile 'com.google.dagger:dagger:2.10'
   annotationProcessor 'com.google.dagger:dagger-compiler:2.10'
+
+  // butterknife
+  annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
 
   // my own libraries
   compile project(':lib-base')

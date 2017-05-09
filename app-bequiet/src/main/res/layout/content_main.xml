@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/wz_zhuangzhou"
+    >
+
+  <TextView
+      android:id="@+id/text_a"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/xp10.0"
+      android:layout_marginTop="@dimen/xp10.0"
+      android:gravity="center"
+      android:hint="一\n群\n人\n在\n梦\n里\n打\n来\n打\n去\n，"
+      android:textColor="@android:color/white"
+      android:textColorHint="@android:color/white"
+      android:textSize="20sp"
+      android:textStyle="bold"
+      />
+
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignBottom="@+id/text_a"
+      android:layout_marginStart="@dimen/xp20.0"
+      android:gravity="center"
+      android:hint="有\n意\n思\n么\n？"
+      android:textColor="@android:color/white"
+      android:textColorHint="@android:color/white"
+      android:textSize="20sp"
+      android:textStyle="bold"
+      />
+
+  <com.hayukleung.x.bequiet.widget.ShyaringanView
+      android:id="@+id/shyaringan"
+      android:layout_width="@dimen/xp50.0"
+      android:layout_height="@dimen/xp50.0"
+      android:layout_alignParentBottom="true"
+      />
+
+  <TextView
+      android:id="@+id/decibel"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentBottom="true"
+      android:layout_alignParentEnd="true"
+      android:layout_marginBottom="@dimen/xp5.0"
+      android:layout_marginEnd="@dimen/xp5.0"
+      android:gravity="center"
+      android:hint="--.-- dB"
+      android:textColor="@android:color/white"
+      android:textColorHint="@android:color/white"
+      android:textSize="60sp"
+      android:textStyle="bold"
+      />
+</RelativeLayout>

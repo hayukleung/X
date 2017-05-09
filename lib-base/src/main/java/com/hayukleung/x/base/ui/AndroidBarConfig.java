@@ -8,7 +8,7 @@ import android.util.TypedValue;
 import com.hayukleung.x.base.R;
 import java.lang.reflect.Method;
 
-public class StatusBarConfig {
+public class AndroidBarConfig {
 
   private static final String STATUS_BAR_HEIGHT_RES_NAME = "status_bar_height";
   private static final String NAV_BAR_HEIGHT_RES_NAME = "navigation_bar_height";
@@ -40,7 +40,7 @@ public class StatusBarConfig {
   private final int mNavigationBarWidth;
   private final boolean mInPortrait;
 
-  StatusBarConfig(Context context) {
+  AndroidBarConfig(Context context) {
     Resources res = context.getResources();
     mInPortrait = (res.getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT);
     mStatusBarHeight = getInternalDimensionSize(res, STATUS_BAR_HEIGHT_RES_NAME);

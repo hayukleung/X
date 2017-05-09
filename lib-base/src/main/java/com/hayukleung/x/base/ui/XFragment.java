@@ -23,7 +23,7 @@ import java.lang.ref.WeakReference;
 public abstract class XFragment<M extends BaseBean, P extends RXMVPPresenter> extends BaseFragment
     implements LCEView<M, P> {
 
-  private StatusBarConfig mStatusBarConfig;
+  private AndroidBarConfig mAndroidBarConfig;
 
   private FrameLayout mLayoutRoot;
 
@@ -151,11 +151,11 @@ public abstract class XFragment<M extends BaseBean, P extends RXMVPPresenter> ex
     mLayoutEmpty.setVisibility(View.VISIBLE);
   }
 
-  protected StatusBarConfig getStatusBarConfig() {
-    if (null == mStatusBarConfig) {
-      mStatusBarConfig = new StatusBarConfig(getActivity());
+  protected AndroidBarConfig getAndroidBarConfig() {
+    if (null == mAndroidBarConfig) {
+      mAndroidBarConfig = new AndroidBarConfig(getActivity());
     }
-    return this.mStatusBarConfig;
+    return this.mAndroidBarConfig;
   }
 
   /**

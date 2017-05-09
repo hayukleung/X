@@ -20,52 +20,57 @@ public class BaseFragment extends RxFragment {
   }
 
   @Override public void onAttach(Activity activity) {
-    XLog.d(String.format("%s.%s", TAG, "onAttach()"));
+    XLog.e(String.format("%s.%s", TAG, "onAttach()"));
     super.onAttach(activity);
   }
 
   @Override public void onCreate(@Nullable Bundle savedInstanceState) {
-    XLog.d(String.format("%s.%s", TAG, "onCreate()"));
+    XLog.e(String.format("%s.%s", TAG, "onCreate()"));
     super.onCreate(savedInstanceState);
   }
 
   @Override public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-    XLog.d(String.format("%s.%s", TAG, "onViewCreated()"));
+    XLog.e(String.format("%s.%s", TAG, "onViewCreated()"));
     super.onViewCreated(view, savedInstanceState);
   }
 
   @Override public void onStart() {
-    XLog.d(String.format("%s.%s", TAG, "onStart()"));
+    XLog.e(String.format("%s.%s", TAG, "onStart()"));
     super.onStart();
   }
 
   @Override public void onResume() {
-    XLog.d(String.format("%s.%s", TAG, "onResume()"));
+    XLog.e(String.format("%s.%s", TAG, "onResume()"));
     super.onResume();
   }
 
   @Override public void onPause() {
-    XLog.d(String.format("%s.%s", TAG, "onPause()"));
+    XLog.e(String.format("%s.%s", TAG, "onPause()"));
     super.onPause();
   }
 
   @Override public void onStop() {
-    XLog.d(String.format("%s.%s", TAG, "onStop()"));
+    XLog.e(String.format("%s.%s", TAG, "onStop()"));
     super.onStop();
   }
 
   @Override public void onDestroyView() {
-    XLog.d(String.format("%s.%s", TAG, "onDestroyView()"));
+    XLog.e(String.format("%s.%s", TAG, "onDestroyView()"));
     super.onDestroyView();
   }
 
   @Override public void onDestroy() {
-    XLog.d(String.format("%s.%s", TAG, "onDestroy()"));
+    XLog.e(String.format("%s.%s", TAG, "onDestroy()"));
     super.onDestroy();
   }
 
   @Override public void onDetach() {
-    XLog.d(String.format("%s.%s", TAG, "onDetach()"));
+    XLog.e(String.format("%s.%s", TAG, "onDetach()"));
     super.onDetach();
+  }
+
+  @Override public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+    XLog.e(String.format("%s.%s", TAG, "onActivityCreated()"));
+    super.onActivityCreated(savedInstanceState);
   }
 }

@@ -13,33 +13,33 @@ public class BaseActivity extends RxAppCompatActivity {
   private static final String TAG = "Activity";
 
   @Override protected void onCreate(@Nullable Bundle savedInstanceState) {
-    XLog.d(String.format("%s.%s", TAG, "onCreate()"));
+    XLog.e(String.format("%s.%s", TAG, "onCreate()"));
     super.onCreate(savedInstanceState);
     getComponentApp().inject(this);
   }
 
   @Override protected void onStart() {
-    XLog.d(String.format("%s.%s", TAG, "onStart()"));
+    XLog.e(String.format("%s.%s", TAG, "onStart()"));
     super.onStart();
   }
 
   @Override protected void onResume() {
-    XLog.d(String.format("%s.%s", TAG, "onResume()"));
+    XLog.e(String.format("%s.%s", TAG, "onResume()"));
     super.onResume();
   }
 
   @Override protected void onPause() {
-    XLog.d(String.format("%s.%s", TAG, "onPause()"));
+    XLog.e(String.format("%s.%s", TAG, "onPause()"));
     super.onPause();
   }
 
   @Override protected void onStop() {
-    XLog.d(String.format("%s.%s", TAG, "onStop()"));
+    XLog.e(String.format("%s.%s", TAG, "onStop()"));
     super.onStop();
   }
 
   @Override protected void onDestroy() {
-    XLog.d(String.format("%s.%s", TAG, "onDestroy()"));
+    XLog.e(String.format("%s.%s", TAG, "onDestroy()"));
     super.onDestroy();
   }
 

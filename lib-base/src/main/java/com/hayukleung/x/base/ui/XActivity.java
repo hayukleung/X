@@ -20,10 +20,9 @@ public class XActivity extends BaseActivity {
 
   public static final String FRAGMENT_NAME = "fragment_name";
   private static final String FRAGMENT_RECORD = "fragment_record";
-
+  protected Unbinder mUnbinder;
   private String mFragmentName;
   private ArrayList<Integer> mFragmentRecord = new ArrayList<>();
-  private Unbinder mUnbinder;
 
   @Override protected void onCreate(@Nullable Bundle savedInstanceState) {
     Intent intent = getIntent();
@@ -110,7 +109,7 @@ public class XActivity extends BaseActivity {
       if (active != null && index >= 0 && index < active.size()) {
         fragment = active.get(index);
         if (fragment == null) {
-          XLog.w("Activity result no fragment exists for index: 0x" + Integer.toHexString(index));
+          XLog.e("Activity result no fragment exists for index: 0x" + Integer.toHexString(index));
         } else {
           active = FragmentHelper.getChildActive(fragment);
         }

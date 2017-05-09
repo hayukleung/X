@@ -8,6 +8,9 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
+/**
+ * Translucent 效果
+ */
 public class TranslucentStatusCompat {
   static final TranslucentStatusCompatImpl IMPL;
 

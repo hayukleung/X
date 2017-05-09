@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_rounded_corners_white"
+    android:paddingBottom="@dimen/xp5.0"
+    android:paddingLeft="@dimen/xp10.0"
+    android:paddingRight="@dimen/xp10.0"
+    android:paddingTop="@dimen/xp5.0"
+    >
+
+  <TextView
+      android:id="@+id/title"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="@dimen/xp2.0"
+      android:text="权限请求"
+      android:textColor="#333333"
+      android:textSize="16sp"
+      />
+
+  <TextView
+      android:id="@+id/permissions"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/title"
+      android:layout_marginBottom="@dimen/xp2.0"
+      android:text="权限"
+      android:textColor="#666666"
+      android:textSize="14sp"
+      />
+
+  <TextView
+      android:id="@+id/negative"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/permissions"
+      android:layout_toLeftOf="@+id/positive"
+      android:padding="@dimen/xp1.0"
+      android:text="放弃请求"
+      android:textColor="@android:color/holo_red_dark"
+      />
+
+  <TextView
+      android:id="@+id/positive"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentRight="true"
+      android:layout_below="@+id/permissions"
+      android:layout_marginLeft="@dimen/xp2.0"
+      android:padding="@dimen/xp1.0"
+      android:text="设置"
+      android:textColor="@android:color/black"
+      />
+</RelativeLayout>

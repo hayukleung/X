@@ -60,16 +60,23 @@ public class SubFragment extends DemoBaseFragment<Sub, ContractSub.IPresenterSub
     UIUtils.setCenterTitle(getActivity(), toolbar, "sub")
         .setTextColor(getActivity().getResources().getColor(android.R.color.black));
 
+    toolbar.setNavigationIcon(R.drawable.ic_toolbar_back_black);
+    toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+      @Override public void onClick(View v) {
+        getActivity().onBackPressed();
+      }
+    });
+
     // mPresenterProfile.request(getGitHubApiModule(), bindUntilEvent(FragmentEvent.PAUSE));
     // mPresenterProfile.queryCategory(getActivity());
+  }
+
+  @Override public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+    super.onActivityCreated(savedInstanceState);
   }
 
   @Override public void onDestroy() {
     mPresenterSub.detachView();
     super.onDestroy();
-  }
-
-  @Override public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-    super.onActivityCreated(savedInstanceState);
   }
 }

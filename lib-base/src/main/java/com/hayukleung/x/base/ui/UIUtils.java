@@ -14,14 +14,8 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 /**
- * XGitHub
- * com.hayukleung.xgithub.view
- * UIUtils.java
- *
- * by hayukleung
- * at 2017-04-05 15:37
+ * UI 公用方法
  */
-
 public class UIUtils {
 
   public static TextView setCenterTitle(Activity activity, Toolbar toolbar, int titleRes) {

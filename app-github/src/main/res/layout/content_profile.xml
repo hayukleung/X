@@ -1,0 +1,119 @@
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:appGithub="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+  <!--appGithub:elevation="0dp"-->
+  <android.support.design.widget.AppBarLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      >
+
+    <android.support.design.widget.CollapsingToolbarLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        appGithub:contentScrim="@color/colorPrimary"
+        appGithub:layout_scrollFlags="scroll|exitUntilCollapsed|enterAlwaysCollapsed"
+        >
+      <!--需要随列表上下滚动显示隐藏的区域-->
+      <!--scroll - 想滚动就必须设置这个。-->
+      <!--enterAlways - 实现quick return效果, 当向下移动时，立即显示View（比如Toolbar)。-->
+      <!--exitUntilCollapsed - 向上滚动时收缩View，但可以固定Toolbar一直在上面。-->
+      <!--enterAlwaysCollapsed - 当你的View已经设置minHeight属性又使用此标志时，你的View只能以最小高度进入，只有当滚动视图到达顶部时才扩大到完整高度。-->
+      <RelativeLayout
+          android:id="@+id/header"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:minHeight="?attr/actionBarSize"
+          appGithub:layout_collapseMode="parallax"
+          appGithub:layout_collapseParallaxMultiplier="0.7"
+          >
+
+        <ImageView
+            android:id="@+id/bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ban"
+            />
+
+        <LinearLayout
+            android:id="@+id/layout_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="64dp"
+            android:orientation="vertical"
+            >
+
+          <ImageView
+              android:id="@+id/icon"
+              android:layout_width="50dp"
+              android:layout_height="50dp"
+              android:layout_gravity="center_horizontal"
+              />
+
+          <TextView
+              android:id="@+id/name"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center_horizontal"
+              android:layout_marginTop="4dp"
+              android:ellipsize="end"
+              android:maxLines="1"
+              android:textColor="@android:color/white"
+              android:textSize="16sp"
+              android:textStyle="bold"
+              tools:text="用户名"
+              />
+        </LinearLayout>
+      </RelativeLayout>
+
+      <android.support.v7.widget.Toolbar
+          android:id="@+id/toolbar"
+          android:layout_width="match_parent"
+          android:layout_height="?attr/actionBarSize"
+          android:background="#22000000"
+          appGithub:contentInsetEnd="0dp"
+          appGithub:contentInsetStart="0dp"
+          appGithub:layout_collapseMode="pin"
+          >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#00000000"
+            >
+
+          <TextView
+              android:id="@+id/title"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_centerInParent="true"
+              android:text="Profile"
+              android:textColor="#eeeeee"
+              android:textSize="18sp"
+              />
+        </RelativeLayout>
+      </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.CollapsingToolbarLayout>
+  </android.support.design.widget.AppBarLayout>
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      appGithub:layout_behavior="@string/appbar_scrolling_view_behavior"
+      >
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        />
+  </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

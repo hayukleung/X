@@ -1,1 +1,2 @@
-include ':app-bequiet', ':lib-mvp', ':lib-base', ':app-demo', ':demo-dagger2', ':demo-video'
+include ':app-bequiet', ':lib-mvp', ':lib-base', ':app-demo', ':demo-dagger2', ':demo-video',
+    ':demo-translucent-status-bar', ':app-github'

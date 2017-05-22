@@ -27,14 +27,15 @@ public class SurfaceViewActivity extends AppCompatActivity {
   @Override protected void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
-    mSurfaceView = new SurfaceView(this);
-    setContentView(mSurfaceView);
+    setContentView(R.layout.activity_demo_2);
+    mSurfaceView = (SurfaceView) findViewById(R.id.surface_view);
 
     mSurfaceView.getHolder().addCallback(new SurfaceHolder.Callback() {
 
       @Override public void surfaceCreated(SurfaceHolder holder) {
         mMediaPlayer = new MediaPlayer();
         mMediaPlayer.setSurface(holder.getSurface());
+        mMediaPlayer.setLooping(true);
         String uri = "android.resource://" + getPackageName() + "/" + R.raw.android_kitkat;
         try {
           mMediaPlayer.setDataSource(SurfaceViewActivity.this, Uri.parse(uri));
@@ -54,5 +55,14 @@ public class SurfaceViewActivity extends AppCompatActivity {
 
       }
     });
+  }
+
+  @Override protected void onPause() {
+    if (null != mMediaPlayer && mMediaPlayer.isPlaying()) {
+      mMediaPlayer.stop();
+      mMediaPlayer.release();
+      mMediaPlayer = null;
+    }
+    super.onPause();
   }
 }

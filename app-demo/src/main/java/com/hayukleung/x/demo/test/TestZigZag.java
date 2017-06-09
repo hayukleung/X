@@ -1,17 +1,17 @@
-package com.hayukleung.x.demo;
+package com.hayukleung.x.demo.test;
 
 import java.util.HashMap;
 
 /**
  * X
  * com.hayukleung.x.demo
- * Test.java
+ * TestZigZag.java
  *
  * by hayukleung
  * at 2017-05-14 16:33
  */
 
-public class Test {
+public class TestZigZag {
 
   public static int[] twoSum(int[] numbers, int target) {
     HashMap<Integer, Integer> map = new HashMap<>();

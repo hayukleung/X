@@ -28,7 +28,7 @@ public class TestProxy {
                 Integer a = (Integer) args[0];
                 Integer b = (Integer) args[1];
                 System.out.println("方法名：" + method.getName());
-                System.out.println("参数：" + a + " , " + b);
+                System.out.println("参数：" + a + ", " + b);
 
                 GET get = method.getAnnotation(GET.class);
                 System.out.println("注解：" + get.value());

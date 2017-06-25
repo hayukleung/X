@@ -28,14 +28,8 @@ import com.trello.rxlifecycle2.android.FragmentEvent;
 import javax.inject.Inject;
 
 /**
- * XGitHub
- * com.hayukleung.xgithub.view.profile
- * ProfileFragment.java
- *
- * by hayukleung
- * at 2017-04-03 20:53
+ * Profile
  */
-
 public class ProfileFragment extends XBaseFragment<GitHub, ContractProfile.IPresenterProfile>
     implements ProfileView, HasComponent<ComponentProfile> {
 
@@ -49,6 +43,8 @@ public class ProfileFragment extends XBaseFragment<GitHub, ContractProfile.IPres
   @BindView(R.id.header) RelativeLayout mHeader;
   @BindView(R.id.title) TextView mTitleView;
   @BindView(R.id.recycler_view) RecyclerView mRecyclerView;
+
+  private GitHub mGitHub;
 
   @Override public void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -66,6 +62,11 @@ public class ProfileFragment extends XBaseFragment<GitHub, ContractProfile.IPres
   @Override public void onResume() {
     super.onResume();
     UIUtils.requestStatusBarLight(this, true, getResources().getColor(R.color.colorPrimary));
+    if (null == mGitHub) {
+      mPresenterProfile.request(getModuleAPI(), bindUntilEvent(FragmentEvent.PAUSE));
+    } else {
+      showContent(mGitHub);
+    }
   }
 
   @Override protected int getContentView() {
@@ -79,6 +80,7 @@ public class ProfileFragment extends XBaseFragment<GitHub, ContractProfile.IPres
   @Override public void showContent(GitHub data) {
     super.showContent(data);
 
+    mGitHub = data;
     XImage.load(getActivity(), data.getAvatar_url(), mIcon);
     mName.setText(data.getName());
   }
@@ -109,8 +111,6 @@ public class ProfileFragment extends XBaseFragment<GitHub, ContractProfile.IPres
     mRecyclerView.setLayoutManager(
         new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
     mRecyclerView.setAdapter(new ProfileAdapter());
-
-    mPresenterProfile.request(getModuleAPI(), bindUntilEvent(FragmentEvent.PAUSE));
   }
 
   @Override public void onDestroy() {

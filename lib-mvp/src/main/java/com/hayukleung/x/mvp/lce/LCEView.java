@@ -5,15 +5,6 @@ import com.hayukleung.x.mvp.MVPPresenter;
 import com.hayukleung.x.mvp.MVPView;
 
 /**
- * XGitHub
- * com.hayukleung.mvp.lce
- * LCEView.java
- *
- * by hayukleung
- * at 2017-04-02 14:59
- */
-
-/**
  * mvp view with functions:
  * loading - content - error and empty
  *

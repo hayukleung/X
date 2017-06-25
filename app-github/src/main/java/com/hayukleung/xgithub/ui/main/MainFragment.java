@@ -1,6 +1,7 @@
 package com.hayukleung.xgithub.ui.main;
 
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TabHost;
 import android.widget.TextView;
+import android.widget.Toast;
 import butterknife.BindView;
 import com.hayukleung.x.base.di.HasComponent;
 import com.hayukleung.x.base.di.module.XModuleActivity;
@@ -76,6 +78,18 @@ public class MainFragment extends XBaseFragment<Stub, ContractMain.IPresenterMai
   @Override public void onDestroy() {
     mPresenter.detachView();
     super.onDestroy();
+  }
+
+  private long mBackTime = 0L;
+
+  @Override public boolean onBackPressed() {
+    long time = SystemClock.elapsedRealtime();
+    if (time - mBackTime > 2000) {
+      Toast.makeText(getActivity(), "再按一次返回退出", Toast.LENGTH_SHORT).show();
+      mBackTime = time;
+      return true;
+    }
+    return super.onBackPressed();
   }
 
   /**

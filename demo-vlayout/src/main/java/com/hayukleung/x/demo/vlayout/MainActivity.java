@@ -2,6 +2,7 @@ package com.hayukleung.x.demo.vlayout;
 
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+
 import com.hayukleung.x.demo.vlayout.activity.ColumnLayoutHelperActivity_;
 import com.hayukleung.x.demo.vlayout.activity.DelegateActivity_;
 import com.hayukleung.x.demo.vlayout.activity.FixLayoutActivity_;
@@ -12,6 +13,7 @@ import com.hayukleung.x.demo.vlayout.activity.ScrollFixLayoutActivity_;
 import com.hayukleung.x.demo.vlayout.activity.SingleLayoutHelperActivity_;
 import com.hayukleung.x.demo.vlayout.activity.StaggeredGridLayoutHelperActivity_;
 import com.hayukleung.x.demo.vlayout.activity.StickyLayoutActivity_;
+
 import org.androidannotations.annotations.EActivity;
 
 @EActivity(R.layout.activity_main) public class MainActivity extends AppCompatActivity {

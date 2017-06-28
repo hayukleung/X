@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name="com.hayukleung.x.demo.databinding.demo3.Demo3Activity">
+        <activity android:name="com.hayukleung.x.demo.databinding.demo5.Demo5Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

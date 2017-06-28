@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.hayukleung.x.demo.databinding.demo3.EventHandler" />
+
+        <variable
+            name="param"
+            type="com.hayukleung.x.demo.databinding.demo3.Param" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> handler.onClickDemo3(param)}"
+            android:text="event demo 3" />
+    </LinearLayout>
+</layout>
